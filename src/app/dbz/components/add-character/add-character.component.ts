@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Character } from '../../interfaces/character.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-character',
+  selector: 'app-dbz-add-character',
   templateUrl: './add-character.component.html',
-  styleUrl: './add-character.component.css'
+  styleUrl: './add-character.component.css',
+  imports: [CommonModule, FormsModule]
 })
+
 export class AddCharacterComponent {
+
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+  public character: Character = {
+    name: 'Lucía',
+    power: 12.000
+  }
+
+  emitCharacter (): void {
+    console.log(this.character);
+
+    if (this.character.name.length === 0){ return; }
+
+    this.onNewCharacter.emit(this.character);
+
+    this.character = {name: '', power: 0};
+
+  }
 
 }
