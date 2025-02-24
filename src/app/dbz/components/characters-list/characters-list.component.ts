@@ -12,14 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CharacterListComponent {
 
   @Input()
-  public charactersList: Character[] = [
-
-      {
-        name: "Trunk",
-        power: 10
-      }
-
-    ];
+  public charactersList: Character[] = [];
 
   @Output()
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CharacterListComponent } from '../components/characters-list/characters-list.component';
 import { AddCharacterComponent } from '../components/add-character/add-character.component';
 import { Character } from '../interfaces/character.interface';
